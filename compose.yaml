@@ -1,0 +1,7 @@
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - .:/home/node/app
+    tty: true
