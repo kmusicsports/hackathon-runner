@@ -1,0 +1,34 @@
+{
+  "name": "hackathon-runner",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "web",
+  "workspaceFolder": "/home/node/app",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dsznajder.es7-react-js-snippets",
+        "jawandarajbir.react-vscode-extension-pack",
+        "planbcoding.vscode-react-refactor",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "biomejs.biome"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "files.associations": {
+          "*.css": "tailwindcss"
+        },
+        "files.autoSave": "off",
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit",
+          "source.addMissingImports": "explicit",
+          "source.fixAll": "explicit",
+          "quickfix.biome": "explicit"
+        }
+      }
+    }
+  }
+}
