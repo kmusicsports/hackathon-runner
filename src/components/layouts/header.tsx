@@ -4,7 +4,7 @@ import { appName } from "@/config";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary backdrop-blur">
+    <header className="sticky top-0 z-50 w-full bg-primary">
       <div className="flex h-14 items-center px-4">
         <Link className="flex items-center" to="/">
           <img alt={appName} height={36} src="/app.svg" width={36} />
