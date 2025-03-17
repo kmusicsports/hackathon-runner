@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router";
 
-import { questionNum } from "@/assets/questions";
 import BackButton from "@/components/elements/back-button";
 import { Progress } from "@/components/ui/progress";
+import { questionNum } from "@/features/check/assets/questions";
 import QuestionList from "@/features/check/components/question-list";
 
 const QuestionPage = () => {

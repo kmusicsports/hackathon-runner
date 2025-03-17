@@ -1,6 +1,6 @@
-import { questions } from "@/assets/questions";
 import { H4 } from "@/components/elements/typography/heading";
 import { Button } from "@/components/ui/button";
+import { questions } from "@/features/check/assets/questions";
 
 type QuestionListProps = {
   currentQuestion: number;
