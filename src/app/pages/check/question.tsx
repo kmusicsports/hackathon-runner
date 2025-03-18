@@ -6,11 +6,13 @@ import BackButton from "@/components/elements/back-button";
 import { Progress } from "@/components/ui/progress";
 import { questionNum } from "@/features/check/assets/questions";
 import QuestionList from "@/features/check/components/question-list";
+import { useProgress } from "@/features/check/hooks/use-progress";
+import { useCounter } from "@/hooks/use-counter";
 
 const QuestionPage = () => {
   const navigate = useNavigate();
-  const [progress, setProgress] = useState(1);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [progress, { incrementProgress, decrementProgress }] = useProgress();
+  const [count, { incrementCount, decrementCount }] = useCounter();
   const [answers, setAnswers] = useState({
     hackathon: "0",
     team: "0",
@@ -26,26 +28,26 @@ const QuestionPage = () => {
   });
 
   const handlePrev = () => {
-    if (currentQuestion === 0) {
+    if (count === 0) {
       navigate("/");
       return;
     }
-    setCurrentQuestion(currentQuestion - 1);
-    setProgress(progress - 9);
+    decrementCount();
+    decrementProgress();
   };
 
   const handleNext = ({ id, value }: { id: string; value: number }) => {
-    setProgress(progress + 9);
+    incrementProgress();
 
     const updatedAnswers = { ...answers, [id]: String(value) };
     setAnswers(updatedAnswers);
 
-    if (currentQuestion === questionNum - 1) {
+    if (count === questionNum - 1) {
       const searchParams = new URLSearchParams(updatedAnswers).toString();
       navigate(`/check/result?${searchParams}`);
       return;
     }
-    setCurrentQuestion(currentQuestion + 1);
+    incrementCount();
   };
 
   return (
@@ -57,7 +59,7 @@ const QuestionPage = () => {
         <p className="mt-1 text-muted-foreground">診断</p>
       </div>
 
-      <QuestionList currentQuestion={currentQuestion} handleNext={handleNext} />
+      <QuestionList currentQuestion={count} handleNext={handleNext} />
     </div>
   );
 };
