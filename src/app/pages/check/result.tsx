@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router";
 import { H2 } from "@/components/elements/typography/heading";
 import { Button } from "@/components/ui/button";
 import ResultMessageList from "@/features/check/components/result-message-list";
+import ResultScore from "@/features/check/components/result-score";
 
 import type { Answers } from "@/features/check/types";
 
@@ -23,10 +24,11 @@ const ResultPage = () => {
   };
 
   return (
-    <div className="mx-auto mt-4 w-1/2 space-y-4">
+    <div className="mx-auto my-4 w-1/2 space-y-4">
       <H2 className="text-center">診断結果</H2>
 
       <ResultMessageList answers={answers} />
+      <ResultScore answers={answers} />
 
       <Button className="w-full" asChild>
         <Link to="/">ホームへ戻る</Link>
