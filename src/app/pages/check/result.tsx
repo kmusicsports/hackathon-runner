@@ -24,7 +24,7 @@ const ResultPage = () => {
   };
 
   return (
-    <div className="mx-auto my-4 w-1/2 space-y-4">
+    <div className="mx-auto my-4 w-11/12 max-w-6xl space-y-4 lg:w-1/2">
       <H2 className="text-center">診断結果</H2>
 
       <ResultMessageList answers={answers} />

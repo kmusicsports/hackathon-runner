@@ -51,7 +51,7 @@ const QuestionPage = () => {
   };
 
   return (
-    <div className="mx-auto mt-2 w-1/2">
+    <div className="mx-auto mt-2 w-10/12 max-w-2xl lg:w-1/2">
       <BackButton onClick={handlePrev} />
 
       <div className="mt-4">
