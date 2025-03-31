@@ -20,7 +20,7 @@ const HomePage = () => {
           </span>
         </div>
 
-        <Button size={"lg"} asChild>
+        <Button size={"lg"} className="rounded-full" asChild>
           <Link to="/check/question" className="text-xl">
             さっそく診断
           </Link>
