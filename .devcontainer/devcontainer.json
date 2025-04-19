@@ -12,7 +12,8 @@
         "planbcoding.vscode-react-refactor",
         "dbaeumer.vscode-eslint",
         "bradlc.vscode-tailwindcss",
-        "biomejs.biome"
+        "biomejs.biome",
+        "yzhang.markdown-all-in-one"
       ],
       "settings": {
         "editor.formatOnSave": true,
