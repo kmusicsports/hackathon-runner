@@ -48,6 +48,7 @@ const ChartContainer = React.forwardRef<
   return (
     <ChartContext.Provider value={{ config }}>
       <div
+        data-testid={chartId}
         data-chart={chartId}
         ref={ref}
         className={cn(
@@ -168,7 +169,7 @@ const ChartTooltipContent = React.forwardRef<
       labelKey,
     ]);
 
-    if (!active || !payload?.length) {
+    if (!(active && payload?.length)) {
       return null;
     }
 
