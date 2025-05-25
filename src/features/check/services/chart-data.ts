@@ -26,7 +26,10 @@ export const makeChartData = ({ answers }: { answers: Answers }) => {
   // チーム開発経験値
   let teamScore = 0;
 
-  if (answers.hackathon === 0) {
+  if (answers.team === 2) {
+    // インターン・アルバイトでのチーム開発経験
+    teamScore = 4;
+  } else if (answers.hackathon === 0) {
     if (answers.team === 0) {
       // なし
       teamScore = 0;
@@ -34,9 +37,6 @@ export const makeChartData = ({ answers }: { answers: Answers }) => {
       // 知人（友人、研究室仲間）との開発経験
       teamScore = 1;
     }
-  } else if (answers.team === 2) {
-    // インターン・アルバイトでのチーム開発経験
-    teamScore = 4;
   } else {
     // ハッカソンなど、即席チームでの開発経験 1, 2回or3回以上
     teamScore = answers.hackathon + 1;
