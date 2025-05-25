@@ -81,12 +81,10 @@ export default tseslint.config(
             "./tsconfig.json",
             "./tsconfig.app.json",
             "./tsconfig.node.json",
-          ]
+          ],
         },
         alias: {
-          map: [
-            ['', './public'],
-          ],
+          map: [["", "./public"]],
         },
       },
     },
