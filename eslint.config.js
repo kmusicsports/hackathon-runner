@@ -61,7 +61,12 @@ export default tseslint.config(
             },
             {
               group: "internal",
-              pattern: "{/**}",
+              pattern: "{#/**}",
+              position: "before",
+            },
+            {
+              group: "sibling",
+              pattern: "{./**}",
               position: "before",
             },
           ],
@@ -71,11 +76,15 @@ export default tseslint.config(
     },
     settings: {
       "import/resolver": {
-        typescript: {},
-        alias: {
-          map: [
-            ['', './public'],
+        typescript: {
+          project: [
+            "./tsconfig.json",
+            "./tsconfig.app.json",
+            "./tsconfig.node.json",
           ],
+        },
+        alias: {
+          map: [["", "./public"]],
         },
       },
     },
