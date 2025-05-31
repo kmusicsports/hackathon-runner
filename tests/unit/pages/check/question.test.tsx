@@ -23,7 +23,7 @@ describe("QuestionPage", () => {
   it("should navigate to home when clicking back button on first question", async () => {
     // アイコンのSVGを含むボタンを探す
     const backButton = screen.getByRole("button", {
-      name: "",
+      name: "戻る",
     });
     expect(backButton).toBeVisible();
 

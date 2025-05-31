@@ -12,7 +12,7 @@ const ResultMessageList = ({ answers, className }: ResultMessageListProps) => {
   const resultMessages = makeResultMessages({ answers });
 
   return (
-    <div className={className}>
+    <div className={className} data-testid="result-messages">
       <Table>
         <TableBody className="bg-muted">
           {resultMessages.map((message, i) => (
