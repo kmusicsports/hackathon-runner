@@ -11,6 +11,9 @@ import {
   RouterProvider,
 } from "react-router";
 
+import QuestionPage from "@/app/pages/check/question";
+import ResultPage from "@/app/pages/check/result";
+
 interface CustomRenderOptions extends Omit<RenderOptions, "wrapper"> {
   route?: string;
 }
@@ -18,10 +21,10 @@ interface CustomRenderOptions extends Omit<RenderOptions, "wrapper"> {
 const customRender = (ui: ReactElement, options?: CustomRenderOptions) => {
   const router = createMemoryRouter(
     createRoutesFromElements(
-      <Route>
-        <Route path="/" element={ui} />
-        <Route path="/check/question" element={ui} />
-        <Route path="/check/result" element={ui} />
+      <Route path="/*">
+        <Route index element={ui} />
+        <Route path="check/question" element={<QuestionPage />} />
+        <Route path="check/result" element={<ResultPage />} />
       </Route>
     ),
     {
