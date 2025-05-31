@@ -36,7 +36,7 @@ const ResultScore = ({ answers }: { answers: Answers }) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="pb-0">
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} data-testid="result-score">
           <RadarChart data={chartData}>
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <PolarAngleAxis dataKey="index" />

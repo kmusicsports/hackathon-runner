@@ -44,7 +44,7 @@ describe("ResultScore", () => {
 
     render(<ResultScore answers={mockAnswers} />);
 
-    const chartContainer = screen.getByTestId("chart-r1");
+    const chartContainer = screen.getByTestId("result-score");
     expect(chartContainer).toBeVisible();
   });
 
