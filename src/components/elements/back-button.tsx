@@ -14,6 +14,7 @@ const BackButton = ({ onClick, className }: BackButtonProps) => {
       size={"icon"}
       className={className}
       onClick={() => onClick()}
+      aria-label="戻る"
     >
       <ChevronLeft />
     </Button>
